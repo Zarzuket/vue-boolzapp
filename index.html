@@ -12,31 +12,63 @@
         <div id="root" class="container">
             <div class="col_left">
                 <div class="head">
-                    <div class="avatar_img"></div>
-                    <h5>Nome utente</h5>
+                    <div class="avatar_img">
+                        <img src="img/avatar_io.jpg" alt="mio avatar">
+                    </div>
+                    <div class="abc">
+                        <h5>Nome utente</h5>
+                    </div>
                     <div class="container_icons">
                         <i class="fas fa-spinner"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <div class="message_check"></div>
-                <div class="search_bar"></div>
+                <div class="message_check">
+                    <div class="bell_container">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="notifiche">
+                        <h5>Ricevi notifiche messaggi</h5>
+                        <p>Attiva notifiche desktop</p>
+                    </div>
+                </div>
+                <div class="search_bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="input_search">
+                </div>
                 <div class="col_contacts">
+                    <ul>
+                        <li v-for="(contact,index) in contacts">
+                            <div class="container_avatar">
+                                <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="avatar">
+                            </div>
+                            <div class="container_name">
+                                {{contact.name}}
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="col_right">
                 <div class="head">
+                    
                 </div>
                 <div class="chat">
-                    <img class="img_chat" src="img/mine.jpg" alt="">
                 </div>
                 <div class="send_message">
+                    <div class="container_smile">
+                        <i class="far fa-smile"></i>
+                    </div>
+                    <div class="container_input">
+                        <input type="text" placeholder="Scrivi un messaggio">
+                    </div>
+                    <div class="container_microphone">
+                        <i class="fas fa-microphone"></i>
+                    </div>
                 </div>
             </div>
         </div>
-<!-- <i class="fas fa-search"></i> LENTE INGRANDIMENTO -->
-
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script src="js/main.js"></script>
     </body>
