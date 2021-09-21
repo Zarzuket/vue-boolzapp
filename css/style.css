@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Pagina principale */
+
+.container{
+    height: 100vh;
+    width: 70%;
+    margin: auto;
+    border:1px solid black;
+    display: flex;
+}
+
+/* common cols */
+.col_left{
+    width: 40%;
+    border: 1px solid red;
+}
+
+.col_right{
+    width: 60%;
+    border: 1px solid green;
+}
+
+.head{
+    height: 10%;
+    border: 1px solid blue;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+}
+/* solo col left */
+
+.message_check{
+    height: 10%;
+    border:1px solid red;
+    background-color: #8edafc;
+}
+
+.search_bar{
+    height: 5%;
+    border: 1px solid yellow;
+}
+
+.col_contacts{
+    height: 75%;
+    overflow-y: auto;
+    background-color: blue;
+
+}
+
+.container_icons{
+    margin-left: auto;
+    padding: 5px;
+}
+
+.container_icons i{
+    padding: 5px;
+    font-size: 20px;
+    color: grey;
+}
+
+/* solo col right */
+.img_chat{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.chat{
+    height: 80%;
+    overflow-y: auto;
+}
+
+.send_message{
+    height: 10%;
+    border: 1px solid green;
+}
