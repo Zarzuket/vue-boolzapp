@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#root',
     data: {
+        
         contacts: [
             {
                 name: 'Michele',
@@ -83,6 +84,28 @@ var app = new Vue({
                 ],
             },
         ],
+        currentIndex : 0,
+        newMessage :{
+            date: "",
+            message:"",
+            status:"received"
+        }
     },
-    methods: {}
+    methods: {
+        setIndex: function(index){
+            this.currentIndex = index;
+            console.log(this.currentIndex);
+            console.log(this.contacts[index].messages);
+        },
+        addMessage: function(){
+            if (this.newMessage.message != ""){
+                let newMessageSend = {
+                    date:"",
+                    message: this.newMessage.message,
+                    status: "sent"
+                }
+                this.contacts[this.currentIndex].messages.push(newMessageSend)
+            }
+        },
+    }
   })

@@ -56,13 +56,17 @@ body{
 }
 .col_contacts{
     height: 75%;
-    overflow-y: auto;
+    overflow-y: scroll;
     background-color: white;
 
 }
 
 .col_contacts ul li {
     display: flex;
+}
+
+.contacts li.active {
+	background-color: #e9ebeb;
 }
 
 .container_icons{
@@ -141,6 +145,7 @@ body{
 }
 .chat{
     display: flex;
+    flex-direction: column;
 }
 
 .chat.sent .message_text{
@@ -148,6 +153,14 @@ body{
     margin-left: auto;
 }
 
+.sent{
+    border: .625rem solid red;
+}
+
+.received{
+    border: .625rem solid green;
+    margin-left: auto;
+}
 .message_text{
     position: relative;
     width: 40%;

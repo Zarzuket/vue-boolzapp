@@ -38,8 +38,10 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat" class="input_search">
                 </div>
                 <div class="col_contacts">
-                    <ul>
-                        <li v-for="(contact,index) in contacts" :key="index">
+                    <ul class="contacts">
+                        <li v-for="(contact,index) in contacts" :key="index"
+                            :class="index == currentIndex ? 'active' : null"
+                            @click="setIndex(index)">
                             <div class="container_avatar">
                                 <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                             </div>
@@ -67,16 +69,11 @@
                 </div>
                 <div class="chat_container">
                     <div class="chat">
-                        <div class="message_text">
-                            hai portato fuori il cane?
+                        <div :class="mess.status + ' message_text ' " v-for="mess in contacts[currentIndex].messages">
+                            {{mess.message}}
                             <div class="message_date">
-                                10/01/2021 16:15:22
+                                {{mess.date}}
                             </div>
-                        </div>
-                    </div>
-                    <div class="chat sent">
-                        <div class="message_text">
-                            bla blabal
                         </div>
                     </div>
                 </div>
@@ -85,7 +82,7 @@
                         <i class="far fa-smile"></i>
                     </div>
                     <div class="container_input">
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage.message" @keyup.enter="addMessage()">
                     </div>
                     <div class="container_microphone">
                         <i class="fas fa-microphone"></i>
