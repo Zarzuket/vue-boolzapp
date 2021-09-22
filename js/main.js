@@ -104,7 +104,8 @@ var app = new Vue({
                     message: this.newMessage.message,
                     status: "sent"
                 }
-                this.contacts[this.currentIndex].messages.push(newMessageSend)
+                this.contacts[this.currentIndex].messages.push(newMessageSend);
+                this.newMessage.message = "";
             }
         },
     }
