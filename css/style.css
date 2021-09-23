@@ -153,13 +153,11 @@ body{
     margin-left: auto;
 }
 
-.sent{
-    border: .625rem solid red;
-}
 
-.received{
-    border: .625rem solid green;
+
+.sent{
     margin-left: auto;
+    background-color: #D5F9BA!important;
 }
 .message_text{
     position: relative;

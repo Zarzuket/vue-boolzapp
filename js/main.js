@@ -89,13 +89,12 @@ var app = new Vue({
             date: "",
             message:"",
             status:"received"
-        }
+        },
+
     },
     methods: {
         setIndex: function(index){
             this.currentIndex = index;
-            console.log(this.currentIndex);
-            console.log(this.contacts[index].messages);
         },
         addMessage: function(){
             if (this.newMessage.message != ""){
@@ -106,6 +105,14 @@ var app = new Vue({
                 }
                 this.contacts[this.currentIndex].messages.push(newMessageSend);
                 this.newMessage.message = "";
+                setTimeout(() => {
+                  let  newNewMessage = {
+                        date:"",
+                        message:"ok",
+                        status:'received'
+                    }
+                    this.contacts[this.currentIndex].messages.push(newNewMessage);
+                }, 3000);
             }
         },
     }

@@ -58,7 +58,7 @@
                         <img src="img/avatar_1.jpg" alt="mio avatar">
                     </div>
                     <div class="info_nome">
-                        {contact.name}
+                        {{contacts[currentIndex].name}}
                         <p>ultimo accesso oggi alle</p>
                     </div>
                     <div class="container_icons">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="chat_container">
                     <div class="chat">
-                        <div :class="mess.status + ' message_text ' " v-for="mess in contacts[currentIndex].messages">
+                        <div :class="mess.status + ' message_text ' " v-for="mess in contacts[currentIndex].messages" :class="mess.status">
                             {{mess.message}}
                             <div class="message_date">
                                 {{mess.date}}
