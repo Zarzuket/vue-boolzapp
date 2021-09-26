@@ -117,11 +117,16 @@ var app = new Vue({
             }
         },   
             isInContact:function(){
-                console.log(this.contacts[this.name])
+                for (let i=0; i < this.contacts.length; i++)
+                    if (this.contacts[i].name.toLowerCase().includes(this.searchContact.toLowerCase())){
+                    this.contacts[i].visible = true;
+                } else{
+                    this.contacts[i].visible = false;                }
+               
             }
 
     }   
-  })
+})
 
 //   @keyup su funzione che dovrà  fare un ciclo for e vedere se il se searchcontact è includes in contact.name = visibile - true altrimenti visible - false
 //   v-if dove cicli i contatti, dove controllerà il valore di visibile se è true lo rende visibile altrimeno no 

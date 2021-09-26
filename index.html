@@ -43,7 +43,8 @@
                     <ul class="contacts">
                         <li v-for="(contact,index) in contacts" :key="index"
                             :class="index == currentIndex ? 'active' : null"
-                            @click="setIndex(index)">
+                            @click="setIndex(index)"
+                            v-if="contact.visible">
                             <div class="container_avatar">
                                 <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                             </div>
@@ -57,7 +58,7 @@
             <div class="col_right">
                 <div class="head">
                     <div class="avatar_img">
-                        <img src="img/avatar_1.jpg" alt="mio avatar">
+                        <img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`" :alt="contacts[currentIndex].name.name">
                     </div>
                     <div class="info_nome">
                         {{contacts[currentIndex].name}}
