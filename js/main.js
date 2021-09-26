@@ -90,6 +90,7 @@ var app = new Vue({
             message:"",
             status:"received"
         },
+        searchContact: ""
 
     },
     methods: {
@@ -99,21 +100,29 @@ var app = new Vue({
         addMessage: function(){
             if (this.newMessage.message != ""){
                 let newMessageSend = {
-                    date:"",
+                    date:dayjs().format("DD/MM/YYYY HH:mm:ss"),
                     message: this.newMessage.message,
                     status: "sent"
                 }
                 this.contacts[this.currentIndex].messages.push(newMessageSend);
                 this.newMessage.message = "";
                 setTimeout(() => {
-                  let  newNewMessage = {
-                        date:"",
+                  let  messageReceived = {
+                        date:dayjs().format("DD/MM/YYYY HH:mm:ss"),
                         message:"ok",
                         status:'received'
                     }
-                    this.contacts[this.currentIndex].messages.push(newNewMessage);
+                    this.contacts[this.currentIndex].messages.push(messageReceived);
                 }, 3000);
             }
-        },
-    }
+        },   
+            isInContact:function(){
+                console.log(this.contacts[this.name])
+            }
+
+    }   
   })
+
+//   @keyup su funzione che dovrà  fare un ciclo for e vedere se il se searchcontact è includes in contact.name = visibile - true altrimenti visible - false
+//   v-if dove cicli i contatti, dove controllerà il valore di visibile se è true lo rende visibile altrimeno no 
+

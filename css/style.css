@@ -53,6 +53,7 @@ body{
     width: 50%;
     border: none;
     margin-left: 1.25rem;
+    outline: none;
 }
 .col_contacts{
     height: 75%;
@@ -166,6 +167,7 @@ body{
     border-radius: .625rem;
     background-color: white;
     margin-bottom: .625rem;
+    word-break: break-all;
 }
 
 .message_date{
@@ -208,6 +210,7 @@ body{
     border: none;
     width: 100%;
     height: 2.5rem;
+    outline: none;
 }
 
 

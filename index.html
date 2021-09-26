@@ -15,7 +15,7 @@
                     <div class="avatar_img">
                         <img src="img/avatar_io.jpg" alt="mio avatar">
                     </div>
-                    <div class="abc">
+                    <div>
                         <h5>Nome utente</h5>
                     </div>
                     <div class="container_icons">
@@ -35,7 +35,9 @@
                 </div>
                 <div class="search_bar">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="input_search">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="input_search" 
+                    v-model="searchContact"
+                    @keyup=isInContact()>
                 </div>
                 <div class="col_contacts">
                     <ul class="contacts">
@@ -90,6 +92,7 @@
                 </div>
             </div>
         </div>
+        <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script src="js/main.js"></script>
     </body>
